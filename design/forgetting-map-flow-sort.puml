@@ -1,0 +1,21 @@
+@startuml(id=SORT)
+rectangle "Start Sort" #lightblue {
+:Convert LinkedHashMap to Array;
+repeat :Get Next Item in List;
+    :Compare count;
+    if(count is same?) then (true)
+        if(lastRetrievedDate greater?) then (true)
+            :Bump nearer to end of list;
+        else (lastRetrievedDate is less?)
+            :Bump nearer to start of list;
+        endif
+    else if (count is greater?) then (true)
+        :Bump nearer to end of list;
+    else (false)
+        :Bump nearer to start of list;
+    endif
+:backward Get next item;
+repeat while (Items Left?) is (true)
+}
+-> false;
+@enduml

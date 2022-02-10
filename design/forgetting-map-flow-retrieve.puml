@@ -1,0 +1,13 @@
+@startuml
+start
+:Start retrieve;
+:Retrieve item;
+if(Is item null?) then (true)
+    :Return null;
+    end
+endif
+:Add 1 to count in CacheWrapper;
+:Update lastRetrievedDate;
+!include forgetting-map-flow-sort.puml!SORT
+end
+@enduml

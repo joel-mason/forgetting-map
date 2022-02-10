@@ -1,0 +1,10 @@
+@startuml
+start
+:Start add;
+:Add new item;
+if(Is at max capacity?) then (true)
+    :Remove first item;
+endif
+!include forgetting-map-flow-sort.puml!SORT
+end
+@enduml
