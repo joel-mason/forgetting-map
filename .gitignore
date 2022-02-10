@@ -1,0 +1,11 @@
+target/
+.idea/
+*.iml
+.DS_Store
+api/package-lock.json
+api/node_modules/
+api/yarn.lock
+node_modules/
+dist/
+helm/user-manager/charts/
+
