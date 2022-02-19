@@ -1,4 +1,6 @@
-package com.joeldavidmason.forgettingmap;
+package com.joeldavidmason.forgettingmap.map;
+
+import com.joeldavidmason.forgettingmap.cache.wrapper.CacheWrapper;
 
 import java.util.Comparator;
 import java.util.LinkedHashMap;

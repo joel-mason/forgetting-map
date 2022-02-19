@@ -1,5 +1,7 @@
 package com.joeldavidmason.forgettingmap;
 
+import com.joeldavidmason.forgettingmap.map.ForgettingMap;
+import com.joeldavidmason.forgettingmap.cache.wrapper.CacheWrapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,23 +1,20 @@
 package com.joeldavidmason.forgettingmap;
 
+import com.joeldavidmason.forgettingmap.cache.impl.UUIDCache;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("ForgettingMap Tests")
-class ForgettingCacheTests {
+class UUIDCacheTests {
 
     @Test
     void addFiveValues_retrieveAllValues_valueShouldBeAsExpected() {
-        var forgettingCache = new ForgettingCache(5);
+        var forgettingCache = new UUIDCache(5);
         var mapToCheck = new HashMap<Integer, UUID>();
         for(var i = 0; i < 5; i++) {
             var uuid = UUID.randomUUID();
@@ -33,7 +30,7 @@ class ForgettingCacheTests {
 
     @Test
     void addFiveValues_retrieveValueThatDoesNotExist_OrderStaysTheSame() {
-        var forgettingCache = new ForgettingCache(5);
+        var forgettingCache = new UUIDCache(5);
         for(var i = 0; i < 5; i++) {
             forgettingCache.add(i, UUID.randomUUID());
         }
@@ -42,7 +39,7 @@ class ForgettingCacheTests {
 
     @Test
     void addFiveValues_addSixth_zeroIsReplaced() {
-        var forgettingCache = new ForgettingCache(5);
+        var forgettingCache = new UUIDCache(5);
         var mapToCheck = new HashMap<Integer, UUID>();
         for(var i = 0; i < 5; i++) {
             var uuid = UUID.randomUUID();
@@ -58,7 +55,7 @@ class ForgettingCacheTests {
 
     @Test
     void addFiveValues_replaceAllValues_originalValuesAreRemoved() {
-        var forgettingCache = new ForgettingCache(5);
+        var forgettingCache = new UUIDCache(5);
         var mapToCheck = new HashMap<Integer, UUID>();
         for(var i = 0; i < 5; i++) {
             var uuid = UUID.randomUUID();
@@ -84,7 +81,7 @@ class ForgettingCacheTests {
 
     @Test
     void addFiveValues_getOneValueThenAddFiveMore_originalValuesAreRemovedExcludingRetrieved() {
-        var forgettingCache = new ForgettingCache(5);
+        var forgettingCache = new UUIDCache(5);
         var mapToCheck = new HashMap<Integer, UUID>();
         for(var i = 0; i < 5; i++) {
             var uuid = UUID.randomUUID();

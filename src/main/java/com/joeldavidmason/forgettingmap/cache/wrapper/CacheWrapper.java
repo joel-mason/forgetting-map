@@ -1,4 +1,4 @@
-package com.joeldavidmason.forgettingmap;
+package com.joeldavidmason.forgettingmap.cache.wrapper;
 
 import java.time.Instant;
 
